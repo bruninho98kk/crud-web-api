@@ -41,8 +41,10 @@ export default function AleList() {
     <main className="flex flex-col items-center min-h-screen bg-transparent">
       <Header />
       <ToastContainer />
-      <section className="section-box mt-14 max-w-6xl w-full flex flex-col items-center animate-fade-in gap-8">
-        <h1 className="text-3xl font-extrabold text-yellow-900 mb-4 drop-shadow-xl text-center">Cervejas Ale</h1>
+      <section className="section-box mt-14 max-w-6xl w-full flex flex-col items-center animate-fade-in gap-8 bg-gradient-to-br from-yellow-50/80 via-yellow-100/80 to-yellow-200/60 border-2 border-yellow-300 rounded-3xl shadow-2xl p-6">
+        <h1 className="text-4xl font-extrabold text-yellow-900 mb-4 drop-shadow-xl text-center tracking-tight animate-fade-in">
+          🍻 Cervejas ALE Premium
+        </h1>
         {loading && <p className="text-yellow-900 text-lg animate-pulse">Carregando...</p>}
         {error && <p className="text-red-600 text-lg">{error}</p>}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 w-full">
@@ -52,19 +54,19 @@ export default function AleList() {
         </div>
         <div className="flex gap-4 mt-8 justify-center items-center">
           <button
-            className="btn-main disabled:opacity-50"
+            className="btn-main disabled:opacity-50 animate-fade-in"
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
           >
-            Anterior
+            ◀ Anterior
           </button>
-          <span className="px-2 text-yellow-900 font-semibold text-lg">Página {page} de {totalPages}</span>
+          <span className="px-2 text-yellow-900 font-semibold text-lg animate-fade-in">Página {page} de {totalPages}</span>
           <button
-            className="btn-main disabled:opacity-50"
+            className="btn-main disabled:opacity-50 animate-fade-in"
             onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
           >
-            Próxima
+            Próxima ▶
           </button>
         </div>
       </section>
