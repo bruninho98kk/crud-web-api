@@ -10,23 +10,23 @@ export default function Card({ beer }) {
       <Image
         src={beer.image || "/file.svg"}
         alt={beer.name}
-        width={120}
-        height={120}
-        className="rounded object-contain bg-yellow-100 border-2 border-yellow-300 shadow-lg group-hover:scale-110 transition-transform duration-300"
+        width={140}
+        height={140}
+        className="rounded-xl object-contain bg-yellow-100 border-4 border-yellow-400 shadow-2xl group-hover:scale-110 group-hover:rotate-2 transition-transform duration-300"
       />
-      <h2 className="font-bold text-xl text-yellow-900 text-center mt-2 mb-1 drop-shadow group-hover:text-yellow-700 transition-colors duration-200">
-        {beer.name.replace(/\bAle\b/i, "ALE Premium")}
+      <h2 className="font-bold text-2xl text-yellow-900 text-center mt-2 mb-1 drop-shadow group-hover:text-yellow-700 transition-colors duration-200 tracking-wide">
+        {beer.name.replace(/\bAle\b/i, "ALE Supreme")}
       </h2>
-      <p className="text-sm text-yellow-800">Tipo: <span className="font-semibold">{beer.style ? beer.style.replace(/Ale/i, "ALE") : "ALE"}</span></p>
-      <p className="text-sm text-yellow-800">Teor alcoólico: <span className="font-semibold">{beer.abv || "N/A"}</span></p>
+      <p className="text-sm text-yellow-800">Tipo: <span className="font-semibold uppercase tracking-wider text-yellow-900">{beer.style ? beer.style.replace(/Ale/i, "ALE") : "ALE"}</span></p>
+      <p className="text-sm text-yellow-800">Teor alcoólico: <span className="font-semibold text-yellow-900">{beer.abv || "N/A"}</span></p>
       {beer.description && (
-        <p className="text-xs text-gray-700 line-clamp-2 text-center mt-1 italic group-hover:line-clamp-none transition-all duration-300">
+        <p className="text-xs text-gray-700 line-clamp-2 text-center mt-1 italic group-hover:line-clamp-none group-hover:bg-yellow-100/60 group-hover:p-2 rounded transition-all duration-300">
           {beer.description}
         </p>
       )}
       <Link
         href={`/ale/${beer.id}`}
-        className="btn-main mt-2 w-full text-center group-hover:scale-105 group-active:scale-95"
+        className="btn-main mt-2 w-full text-center group-hover:scale-105 group-active:scale-95 group-hover:bg-yellow-400/80 group-hover:text-yellow-900"
       >
         Ver Detalhes
       </Link>
