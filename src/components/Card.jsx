@@ -33,6 +33,9 @@ export default function Card({ beer }) {
       >
         Ver Detalhes
       </Link>
+      <div className="absolute bottom-0 left-0 right-0 py-1 bg-yellow-200/60 text-yellow-900 text-xs text-center font-semibold tracking-widest shadow-inner animate-fade-in">
+        Cerveja exclusiva 2TDS2
+      </div>
     </div>
   );
 }
