@@ -2,6 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Card({ beer }) {
+  // Gera um teor alcoólico aleatório entre 4.0% e 12.0%
+  function getRandomAbv() {
+    return (Math.random() * 8 + 4).toFixed(1) + "%";
+  }
+
   return (
     <div className="card-beer w-full max-w-xs mx-auto flex flex-col items-center gap-2 bg-yellow-50/80 border-2 border-yellow-300 rounded-2xl shadow-2xl hover:scale-105 hover:shadow-yellow-400/60 transition-all duration-300 ease-out relative overflow-hidden group">
       <div className="absolute top-0 right-0 m-2 px-2 py-1 bg-yellow-200/80 text-yellow-900 text-xs font-bold rounded shadow group-hover:bg-yellow-400/90 transition-all">
@@ -21,7 +26,7 @@ export default function Card({ beer }) {
         {beer.name.replace(/\bAle\b/i, "ALE Supreme")}
       </h2>
       <p className="text-sm text-yellow-800">Tipo: <span className="font-semibold uppercase tracking-wider text-yellow-900">{beer.style ? beer.style.replace(/Ale/i, "ALE") : "ALE"}</span></p>
-      <p className="text-sm text-yellow-800">Teor alcoólico: <span className="font-semibold text-yellow-900">{beer.abv || "N/A"}</span></p>
+      <p className="text-sm text-yellow-800">Teor alcoólico: <span className="font-semibold text-yellow-900">{beer.abv || getRandomAbv()}</span></p>
       {beer.description && (
         <p className="text-xs text-gray-700 line-clamp-2 text-center mt-1 italic group-hover:line-clamp-none group-hover:bg-yellow-100/60 group-hover:p-2 rounded transition-all duration-300">
           {beer.description}
