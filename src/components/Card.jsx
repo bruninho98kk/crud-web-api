@@ -7,6 +7,9 @@ export default function Card({ beer }) {
       <div className="absolute top-0 right-0 m-2 px-2 py-1 bg-yellow-200/80 text-yellow-900 text-xs font-bold rounded shadow group-hover:bg-yellow-400/90 transition-all">
         #{beer.id}
       </div>
+      <div className="absolute top-0 left-0 m-2 px-2 py-1 bg-yellow-300/80 text-yellow-900 text-xs font-bold rounded shadow group-hover:bg-yellow-500/90 transition-all animate-bounce">
+        ⭐ Destaque
+      </div>
       <Image
         src={beer.image || "/file.svg"}
         alt={beer.name}
