@@ -29,7 +29,7 @@ export default function Card({ beer }) {
       )}
       <Link
         href={`/ale/${beer.id}`}
-        className="btn-main mt-2 w-full text-center group-hover:scale-105 group-active:scale-95 group-hover:bg-yellow-400/80 group-hover:text-yellow-900"
+        className="btn-main mt-2 w-full text-center group-hover:scale-105 group-active:scale-95 group-hover:bg-yellow-400/80 group-hover:text-yellow-900 animate-pulse"
       >
         Ver Detalhes
       </Link>
