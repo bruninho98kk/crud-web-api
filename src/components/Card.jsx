@@ -3,25 +3,32 @@ import Link from "next/link";
 
 export default function Card({ beer }) {
   return (
-    <div className="card-beer w-full max-w-xs mx-auto flex flex-col items-center gap-2">
+    <div className="card-beer w-full max-w-xs mx-auto flex flex-col items-center gap-2 bg-yellow-50/80 border-2 border-yellow-300 rounded-2xl shadow-2xl hover:scale-105 hover:shadow-yellow-400/60 transition-all duration-300 ease-out relative overflow-hidden group">
+      <div className="absolute top-0 right-0 m-2 px-2 py-1 bg-yellow-200/80 text-yellow-900 text-xs font-bold rounded shadow group-hover:bg-yellow-400/90 transition-all">
+        #{beer.id}
+      </div>
       <Image
         src={beer.image || "/file.svg"}
         alt={beer.name}
         width={120}
         height={120}
-        className="rounded object-contain bg-yellow-50 border border-yellow-200 shadow"
+        className="rounded object-contain bg-yellow-100 border-2 border-yellow-300 shadow-lg group-hover:scale-110 transition-transform duration-300"
       />
-      <h2 className="font-bold text-lg text-yellow-900 text-center mt-2 mb-1 drop-shadow">{beer.name}</h2>
-      <p className="text-sm text-yellow-800">Tipo: <span className="font-semibold">{beer.style || "Ale"}</span></p>
+      <h2 className="font-bold text-xl text-yellow-900 text-center mt-2 mb-1 drop-shadow group-hover:text-yellow-700 transition-colors duration-200">
+        {beer.name.replace(/\bAle\b/i, "ALE Premium")}
+      </h2>
+      <p className="text-sm text-yellow-800">Tipo: <span className="font-semibold">{beer.style ? beer.style.replace(/Ale/i, "ALE") : "ALE"}</span></p>
       <p className="text-sm text-yellow-800">Teor alcoólico: <span className="font-semibold">{beer.abv || "N/A"}</span></p>
       {beer.description && (
-        <p className="text-xs text-gray-600 line-clamp-2 text-center mt-1">{beer.description}</p>
+        <p className="text-xs text-gray-700 line-clamp-2 text-center mt-1 italic group-hover:line-clamp-none transition-all duration-300">
+          {beer.description}
+        </p>
       )}
       <Link
         href={`/ale/${beer.id}`}
-        className="btn-main mt-2 w-full text-center"
+        className="btn-main mt-2 w-full text-center group-hover:scale-105 group-active:scale-95"
       >
-        Detalhes
+        Ver Detalhes
       </Link>
     </div>
   );
