@@ -32,12 +32,7 @@ export default function Card({ beer }) {
           {beer.description}
         </p>
       )}
-      <Link
-        href={`/ale/${beer.id}`}
-        className="btn-main mt-2 w-full text-center group-hover:scale-105 group-active:scale-95 group-hover:bg-yellow-400/80 group-hover:text-yellow-900 animate-pulse"
-      >
-        Ver Detalhes
-      </Link>
+
       <div className="absolute bottom-0 left-0 right-0 py-1 bg-yellow-200/60 text-yellow-900 text-xs text-center font-semibold tracking-widest shadow-inner animate-fade-in">
         Cerveja exclusiva 2TDS2
       </div>

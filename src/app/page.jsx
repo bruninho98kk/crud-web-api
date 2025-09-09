@@ -18,7 +18,7 @@ export default function Home() {
           🍺 Bem-vindo à Cervejaria 2TDS2!
         </h1>
         <h2 className="text-2xl text-yellow-800 mb-2 text-center font-semibold animate-pulse">
-          Descubra as melhores cervejas Ale do mundo
+          Descubra as melhores cervejas do mundo
         </h2>
         <span className="font-bold text-xl text-yellow-900 mb-2 bg-yellow-100/80 px-4 py-1 rounded-xl shadow-inner border-2 border-yellow-300 animate-fade-in">
           Bruno Rodrigues Quintino da Silva
@@ -28,7 +28,7 @@ export default function Home() {
           <span className="text-xs text-yellow-900">– Robert Collier</span>
         </blockquote>
         <Link href="/ale" className="btn-main mt-4 shadow-xl text-lg animate-bounce">
-          Explorar Cervejas Ale
+          Explorar Cervejas 
         </Link>
       </section>
     </main>
